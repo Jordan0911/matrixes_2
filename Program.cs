@@ -5,9 +5,9 @@
    
      static bool Palindrome_sum(int[,] matrix)
      {
-         
+         bool loop=false;
          int sum1 = 0, sum2 = 0,l=0,k=matrix.GetLength(0);
-         while
+         while(loop==false)
          {
              if (l > k)
              {
