@@ -5,33 +5,31 @@
       
         static bool Palindrome_sum(int[,] matrix)
         {
-            int sum1 = 0, sum2 = 0;
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            bool loop = false;
+            int sum1 = 0, sum2 = 0, l = 0, k = matrix.GetLength(0);
+            while (loop == false)
+            {
+                if (l > k)
+                {
+                    return true;
+                }
+                for (int i = 0; i < matrix.GetLength(1); i++)
+                {
+                    sum1 += matrix[l, i];
+                    sum2 += matrix[k, i];
+                }
+                if (sum1 != sum2)
+                {
+                    return false;
+                }
+                l++;
+                k--;
+            }
             return false;
         }
         static bool Edge_checker(int[,] matrix)
         {
-            int sum = 0, sample = matrix[0,0],l=0,h=0,n;
+          int sample = matrix[0,0];
             
    
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -55,25 +53,10 @@
                 }
             }
             return false;
-               
-               
-                
-               
-            
-
-
-
-
-
-
-
-
-
-            return false;
         }
         static bool Diagonal_sum(int[,] matrix)
         {
-            int sum1 = 0,sum2=0,result=0;
+            int sum1 = 0, sum2 = 0;
            
             for (int i = matrix.GetLength(0); i >= 0; i--)
             {
